@@ -6,49 +6,43 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	XML
 %define		pnam	Atom
-Summary:	perl(XML::Atom)
-Summary(pl):	perl(XML::Atom)
+Summary:	XML::Atom - Atom feed and API implementation
+Summary(pl):	XML::Atom - implementacja API Atom
 Name:		perl-XML-Atom
 Version:	0.19
 Release:	0
-# "same as perl" according to META.yml
-License:	(enter GPL/LGPL/BSD/BSD-like/Artistic/other license name here)
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-#Patch0: %{name}
-URL:		http://search.cpan.org/dist/%{pdir}-%{pnam}
+URL:		http://search.cpan.org/dist/XML-Atom/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-# most of CPAN modules have generic URL (substitute pdir and pnam here)
 %if %{with autodeps} || %{with tests}
-#BuildRequires:	perl-
-#BuildRequires:	perl-
 BuildRequires:	perl-DateTime
 %endif
-#Requires:	-
-#Provides:	-
-#Obsoletes:	-
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Atom feed and API implementation.
+Atom is a syndication, API, and archiving format for weblogs and other
+data. XML::Atom implements the feed format as well as a client for the
+API.
+
+%description -l pl
+Atom to API i format archiwów dla blogów i innych danych. XML::Atom
+implementuje ten format, a tak¿e klienta dla tego API.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 # yes i know, its crude, but works, and its simple
-perl -pi -e 's/^auto_install/#auto_install/' Makefile.PL;
-#%patch0 -p1
+%{__perl} -pi -e 's/^auto_install/#auto_install/' Makefile.PL;
 
 %build
-# Don't use pipes here: they generally don't work. Apply a patch.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
 %{__make}
-# if module isn't noarch, use:
-# %{__make} \
-#	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 
