@@ -10,7 +10,7 @@ Summary:	XML::Atom - Atom feed and API implementation
 Summary(pl):	XML::Atom - implementacja API Atom
 Name:		perl-XML-Atom
 Version:	0.22
-Release:	0.1
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
