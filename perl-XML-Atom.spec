@@ -9,15 +9,18 @@
 Summary:	XML::Atom - Atom feed and API implementation
 Summary(pl):	XML::Atom - implementacja API Atom
 Name:		perl-XML-Atom
-Version:	0.22
+Version:	0.23
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	c995e02e64712d98b138236d4dace789
 URL:		http://search.cpan.org/dist/XML-Atom/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	perl-Class-Data-Inheritable
+BuildRequires:	perl-URI
 %if %{with autodeps} && %{with tests}
 BuildRequires:	perl-DateTime
 %endif
