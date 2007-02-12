@@ -7,7 +7,7 @@
 %define		pdir	XML
 %define		pnam	Atom
 Summary:	XML::Atom - Atom feed and API implementation
-Summary(pl):	XML::Atom - implementacja API Atom
+Summary(pl.UTF-8):   XML::Atom - implementacja API Atom
 Name:		perl-XML-Atom
 Version:	0.23
 Release:	1
@@ -32,9 +32,9 @@ Atom is a syndication, API, and archiving format for weblogs and other
 data. XML::Atom implements the feed format as well as a client for the
 API.
 
-%description -l pl
-Atom to API i format archiwÛw dla blogÛw i innych danych. XML::Atom
-implementuje ten format, a takøe klienta dla tego API.
+%description -l pl.UTF-8
+Atom to API i format archiw√≥w dla blog√≥w i innych danych. XML::Atom
+implementuje ten format, a tak≈ºe klienta dla tego API.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
