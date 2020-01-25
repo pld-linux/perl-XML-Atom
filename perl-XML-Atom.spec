@@ -5,7 +5,6 @@
 
 %define		pdir	XML
 %define		pnam	Atom
-%include	/usr/lib/rpm/macros.perl
 Summary:	XML::Atom - Atom feed and API implementation
 Summary(pl.UTF-8):	XML::Atom - implementacja API Atom
 Name:		perl-XML-Atom
